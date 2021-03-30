@@ -1,0 +1,5 @@
+stamp: main-20210330T141937Z-g9429d35
+version: 1.0
+image_desc: Joyent Storage Packet Baremetal Image
+image_name: storage-packet-baremetal
+git_url: https://github.com/joyent/storage-gage-infra.git
