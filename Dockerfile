@@ -16,7 +16,7 @@
 
 FROM centos_7-base
 
-ARG stamp=kernel-switch-20210406T185241Z-g5ece637
+ARG stamp=kernel-switch-20210409T113040Z-g1112cc5
 ARG version=1.0
 ARG image_desc="Joyent Storage Packet Baremetal Image"
 ARG image_name=storage-packet-baremetal
@@ -39,7 +39,7 @@ LABEL storage.baremetal.version=${version} \
 COPY proto /
 
 #
-# Install the packages we need, set the default kernel and clean the yum db.
+# Install the packages we need, clean the yum db and enable docker
 #
 RUN curl -o /etc/yum.repos.d/docker-ce.repo \
         https://download.docker.com/linux/centos/docker-ce.repo && \
@@ -52,6 +52,5 @@ RUN curl -o /etc/yum.repos.d/docker-ce.repo \
       echo image_name: ${image_name}; \
       echo git_url: ${git_url}; \
     } > /etc/joyent-storage.yml && \
-    systemctl enable docker && \
-    grubby --set-default /boot/vmlinuz-5.7.10-1.el7.elrepo.x86_64
+    systemctl enable docker
 

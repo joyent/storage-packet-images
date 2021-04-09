@@ -1,4 +1,4 @@
-stamp: kernel-switch-20210406T185241Z-g5ece637
+stamp: kernel-switch-20210409T113040Z-g1112cc5
 version: 1.0
 image_desc: Joyent Storage Packet Baremetal Image
 image_name: storage-packet-baremetal
